@@ -12,8 +12,11 @@ public class player_movement : MonoBehaviour
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
+    public Camera cam;
+    public Rigidbody rb;
 
     private Vector3 moveDirection = Vector3.zero;
+    Vector2 mousePos;
 
     void Start()
     {
@@ -28,15 +31,21 @@ public class player_movement : MonoBehaviour
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
-            /*if (Input.GetButton("Jump"))
-            {
-            moveDirection.y = jumpSpeed;
-            }*/
         }
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         
         /* Ustawienie gravitacji*/
         moveDirection.y -= gravity * Time.deltaTime;
-
         characterController.Move(moveDirection);
+        
+        
+        
+        
+        /*Podązanie celownikiem za myszką || próba1*/
+        /*Vector3 lookDir = mousePos -rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;*/
+
+        /*DO ZROBIENIA*/
     }
 }

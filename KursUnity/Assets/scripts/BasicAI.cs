@@ -8,6 +8,7 @@ public class BasicAI : MonoBehaviour
 
     [SerializeField] private NavMeshAgent m_NavMeshAgent;
     [SerializeField] private GameObject m_target;
+    private float pos;
 
 
 
@@ -21,6 +22,11 @@ public class BasicAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_NavMeshAgent.SetDestination(m_target.transform.position);
+        
+        /*m_NavMeshAgent.SetDestination(m_target.transform.position);*/
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        m_NavMeshAgent.SetDestination(m_target.transform.position - new Vector3(1f,0f,1f));
     }
 }
