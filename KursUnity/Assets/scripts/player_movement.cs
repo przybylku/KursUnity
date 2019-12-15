@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
-
+    /*Dokumentacja
+        Do obiektu, którego chcemy zrobić jako gracza musimy dodać komponent CharacterController *Wymagane*
+        */
     CharacterController characterController;
 
     public float speed = 6.0f;
