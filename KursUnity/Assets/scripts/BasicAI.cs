@@ -10,7 +10,7 @@ public class BasicAI : MonoBehaviour
     [SerializeField] private GameObject m_target;
     private float pos;
 
-
+    // no i siema 
 
 
     // Start is called before the first frame update
