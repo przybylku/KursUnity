@@ -28,7 +28,12 @@ public class player_movement : MonoBehaviour
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
+            /*if (Input.GetButton("Jump"))
+            {
+            moveDirection.y = jumpSpeed;
+            }*/
         }
+        
         /* Ustawienie gravitacji*/
         moveDirection.y -= gravity * Time.deltaTime;
 
